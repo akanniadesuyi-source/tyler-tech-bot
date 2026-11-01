@@ -25,7 +25,7 @@ async function announce(chat, text) {
   console.log("Valid word:", await game.submitWord(chat, "p1", "apple", turnId, announce));
 
   turnId = messages.at(-1).id;
-  console.log("Wrong letter:", await game.submitWord(chat, "p2", "eqqqq", turnId, announce));
+  console.log("Invalid dictionary word:", await game.submitWord(chat, "p2", "eqqqq", turnId, announce));
 
-  console.log(game.stopGame(chat));
+  console.log(game.stopGame(chat, "host"));
 })();

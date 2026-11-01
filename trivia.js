@@ -457,6 +457,7 @@ async function startTrivia(chatId, announce, difficulty = "easy") {
   if (games.has(chatId)) return "A trivia game is already running.";
 
   const questions = quizzes.filter(q => q.difficulty === difficulty);
+  if (!questions.length) return "Choose easy, medium or hard.";
 
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -469,7 +470,6 @@ async function startTrivia(chatId, announce, difficulty = "easy") {
   }
 
   lastFirstQuestion.set(difficulty, questions[0].question);
-  if (!questions.length) return "Choose easy, medium or hard.";
 
   const game = {
     difficulty,

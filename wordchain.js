@@ -197,7 +197,7 @@ async function eliminatePlayer(chatId, playerId, reason, announce) {
       chatId,
       `${reason}\n❌ Player disqualified.\n🏆 Winner: ${remaining.length ? displayName(game, remaining[0]) : "Nobody"}`
     );
-    return;
+    return "Player disqualified.";
   }
 
   game.currentIndex = nextActiveIndex(game, game.currentIndex);
@@ -210,6 +210,7 @@ async function eliminatePlayer(chatId, playerId, reason, announce) {
   );
 
   startTurnTimer(chatId, announce);
+  return "Player disqualified.";
 }
 
 function stopGame(chatId, playerId) {

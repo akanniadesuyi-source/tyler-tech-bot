@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test-wordchain.js && node test-invalid.js && node test-repeat.js && node test-timeout.js && node test-trivia.js",
     "website": "node website.js"
   },
   "repository": {
